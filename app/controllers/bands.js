@@ -24,5 +24,6 @@ export default Controller.extend({
     });
     this.model.pushObject(newBand);
     this.set("newBandName", "");
+    this.cancelAddBand();
   }),
 });
