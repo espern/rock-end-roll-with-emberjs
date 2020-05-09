@@ -16,8 +16,12 @@ export default Controller.extend({
   cancelAddBand: action(function () {
     this.set("isAddingBand", false);
   }),
-  saveBand: action(function () {
-    let newBand = Band.create({ name: this.newBandName });
+  saveBand: action(function (event) {
+    // prevent form submit event to send serialized form data to the form's URL
+    event.preventDefault();
+    let newBand = Band.create({
+      name: this.newBandName,
+    });
     this.model.pushObject(newBand);
     this.set("newBandName", "");
   }),
