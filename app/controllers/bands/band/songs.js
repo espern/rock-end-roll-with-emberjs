@@ -20,4 +20,7 @@ export default Controller.extend({
     this.set("newSongTitle", "");
     this.cancelAddSong();
   }),
+  updateRating: action(function (song, rating) {
+    song.set("rating", song.rating === rating ? 0 : rating);
+  }),
 });
