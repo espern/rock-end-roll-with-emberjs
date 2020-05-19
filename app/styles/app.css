@@ -31,6 +31,8 @@ a {
   margin-bottom: 10px;
 }
 :root {
+  --bright-yellow: #ffda00;
+  --navitem-link-color: var(--bright-yellow);
   --blue: #357edd;
   --dark-blue: #00449e;
   --light-blue: #96ccff;
