@@ -1,12 +1,13 @@
-import Route from "@ember/routing/route";
+import Route from '@ember/routing/route'
 export default Route.extend({
   resetController(controller) {
     controller.setProperties({
       isAddingSong: false,
-      newSongTitle: "",
-    });
+      newSongTitle: ''
+    })
   },
+
   model() {
-    return this.modelFor("bands.band");
-  },
-});
+    return this.modelFor('bands.band')
+  }
+})

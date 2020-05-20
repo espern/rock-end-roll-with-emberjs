@@ -1,12 +1,12 @@
-import EmberObject from "@ember/object";
+import EmberObject from '@ember/object'
 export default EmberObject.extend({
-  name: "",
-  description: "",
+  name: '',
+  description: '',
 
   init() {
-    this._super(...arguments);
+    this._super(...arguments)
     if (!this.songs) {
-      this.set("songs", []);
+      this.set('songs', [])
     }
-  },
-});
+  }
+})
