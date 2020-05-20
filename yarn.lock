@@ -8886,7 +8886,7 @@ prepend-http@^2.0.0:
   resolved "https://registry.yarnpkg.com/prepend-http/-/prepend-http-2.0.0.tgz#e92434bfa5ea8c19f41cdfd401d741a3c819d897"
   integrity sha1-6SQ0v6XqjBn0HN/UAddBo8gZ2Jc=
 
-prettier-eslint-cli@5.x.x:
+prettier-eslint-cli@5.x.x, prettier-eslint-cli@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/prettier-eslint-cli/-/prettier-eslint-cli-5.0.0.tgz#3d2334053f87413842c1729ecfb7886377bef89f"
   integrity sha512-cei9UbN1aTrz3sQs88CWpvY/10PYTevzd76zoG1tdJ164OhmNTFRKPTOZrutVvscoQWzbnLKkviS3gu5JXwvZg==
