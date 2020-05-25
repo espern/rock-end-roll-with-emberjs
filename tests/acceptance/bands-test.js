@@ -12,7 +12,7 @@ module('Acceptance | Bands', function(hooks) {
     this.server.create('band', { name: 'Long Distance Calling' })
     await visit('/')
 
-    let bandLinks = document.querySelectorAll('.rr-band-link')
+    let bandLinks = document.querySelectorAll('[data-test-rr=band-link]')
     assert.equal(bandLinks.length, 2, 'All band links are rendered')
     assert.ok(
       bandLinks[0].textContent.includes('Radiohead'),
@@ -27,10 +27,10 @@ module('Acceptance | Bands', function(hooks) {
   test('Create a band', async function(assert) {
     this.server.create('band', { name: 'Royal Blood' })
     await visit('/')
-    await click('button')
-    await fillIn('.rr-input', 'Caspian')
-    await click('.rr-action-button')
-    let bandLinks = document.querySelectorAll('.rr-band-link')
+    await click('[data-test-rr=new-band-label]')
+    await fillIn('[data-test-rr=new-band-input]', 'Caspian')
+    await click('[data-test-rr=new-band-button]')
+    let bandLinks = document.querySelectorAll('[data-test-rr=band-link]')
     assert.equal(
       bandLinks.length,
       2,
@@ -42,9 +42,7 @@ module('Acceptance | Bands', function(hooks) {
       'The new band link is rendered as the last item'
     )
     assert.ok(
-      document
-        .querySelector('.rr-navbar-item > .active')
-        .textContent.includes('Songs'),
+      document.querySelector('[data-test-rr=songs-nav-item] > .active'),
       'The Songs tab is active'
     )
   })
