@@ -6,6 +6,7 @@ export default function() {
     let { id } = request.params
     return schema.songs.where({ bandId: id })
   })
+  this.post('/users')
 
   // These comments are here to help you get started. Feel free to delete them.
 
