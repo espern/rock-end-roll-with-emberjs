@@ -32,17 +32,19 @@ a {
 }
 :root {
   --bright-yellow: #ffda00;
-  --navitem-link-color: var(--bright-yellow);
   --blue: #357edd;
   --dark-blue: #00449e;
   --light-blue: #96ccff;
   --mid-grey: #555;
   --near-white: #f4f4f4;
+  --light-red: #ff725c;
+  --navitem-link-color: var(--bright-yellow);
   --input-color: var(--mid-grey);
   --button-color: var(--near-white);
   --button-bg-color: var(--blue);
   --button-hover-color: var(--dark-blue);
   --button-disabled-color: var(--light-blue);
+  --error-color: var(--light-red);
 }
 .rr-navbar {
   position: relative;
@@ -181,4 +183,23 @@ a {
   padding-right: 0.5rem;
   margin-left: -5px;
   border-width: 0;
+}
+.rr-loading-pane {
+  margin: 25px auto;
+}
+.rr-loading-message {
+  text-align: center;
+}
+.rr-spinner {
+  background: url("/images/spinner.svg") no-repeat;
+  height: 31px;
+  width: 31px;
+  margin: 0 auto;
+}
+.rr-error-pane {
+  margin: 25px auto;
+}
+.rr-error-message {
+  text-align: center;
+  color: var(--error-color);
 }
