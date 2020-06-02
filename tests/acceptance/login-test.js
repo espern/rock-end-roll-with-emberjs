@@ -3,11 +3,11 @@ import { visit, fillIn, click } from '@ember/test-helpers'
 import { setupApplicationTest } from 'ember-qunit'
 import { setupMirage } from 'ember-cli-mirage/test-support'
 
-module('Acceptance | Login', function (hooks) {
+module('Acceptance | Login', function(hooks) {
   setupApplicationTest(hooks)
   setupMirage(hooks)
 
-  test('Log in with valid credentials', async function (assert) {
+  test('Log in with valid credentials', async function(assert) {
     let email = 'dave@tcv.com'
     let password = 'ThemCr00ked!'
     this.server.create('user', { email, password })

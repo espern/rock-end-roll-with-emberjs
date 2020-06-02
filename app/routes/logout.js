@@ -8,4 +8,4 @@ export default Route.extend({
     this.session.invalidate()
     this.router.transitionTo('login')
   }
-});
+})

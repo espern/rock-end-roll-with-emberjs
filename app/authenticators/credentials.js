@@ -23,8 +23,9 @@ export default Base.extend({
     let { userEmail, token } = await response.json()
     return { userEmail, token }
   },
+
   async restore(data) {
-    return data;
+    return data
   }
   /*
 invalidate(data) {
