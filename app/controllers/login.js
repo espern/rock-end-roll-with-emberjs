@@ -9,7 +9,7 @@ export default Controller.extend({
     event.preventDefault()
     let { email, password } = this
     await this.session.authenticate('authenticator:credentials',
-      email, password);
+      email, password)
     await this.router.transitionTo('bands')
   })
 })

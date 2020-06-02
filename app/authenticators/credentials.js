@@ -20,7 +20,7 @@ export default Base.extend({
       throw error
     }
 
-    let { user_email: userEmail, token } = await response.json()
+    let { userEmail, token } = await response.json()
     return { userEmail, token }
   }
   /*

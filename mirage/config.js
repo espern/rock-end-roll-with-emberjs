@@ -1,26 +1,27 @@
-import Response from 'ember-cli-mirage/response';
+import Response from 'ember-cli-mirage/response'
 
-export default function () {
-  this.get('/bands', function (schema, request) {
+export default function() {
+  this.get('/bands', function(schema, request) {
     if (!request.requestHeaders.authorization) {
-      return new Response(401);
+      return new Response(401)
     }
-    return schema.bands.all();
-  });
+
+    return schema.bands.all()
+  })
   this.get('/bands/:id')
-  this.get('/bands/:id/songs', function (schema, request) {
+  this.get('/bands/:id/songs', function(schema, request) {
     let { id } = request.params
     return schema.songs.where({ bandId: id })
   })
   this.post('/users')
-  this.post('/token', function (schema, request) {
-    let { username: email, password } =
-      JSON.parse(request.requestBody)
+  this.post('/token', function(schema, request) {
+    let { username: email, password }
+      = JSON.parse(request.requestBody)
     let users = schema.users.where({ email, password })
     if (users.length === 1) {
       return {
         token: 'a.signed.jwt',
-        user_email: email
+        userEmail: email
       }
     }
   })
