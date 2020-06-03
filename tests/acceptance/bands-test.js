@@ -4,11 +4,11 @@ import { loginAs, createBand } from 'rarwe/tests/helpers/custom-helpers'
 import { setupApplicationTest } from 'ember-qunit'
 import { setupMirage } from 'ember-cli-mirage/test-support'
 
-module('Acceptance | Bands', function (hooks) {
+module('Acceptance | Bands', function(hooks) {
   setupApplicationTest(hooks)
   setupMirage(hooks)
 
-  test('List bands', async function (assert) {
+  test('List bands', async function(assert) {
     this.server.create('band', { name: 'Radiohead' })
     this.server.create('band', { name: 'Long Distance Calling' })
 
@@ -29,7 +29,7 @@ module('Acceptance | Bands', function (hooks) {
       )
   })
 
-  test('Create a band', async function (assert) {
+  test('Create a band', async function(assert) {
     this.server.create('band', { name: 'Royal Blood' })
 
     await loginAs('dave@tcv.com')
@@ -46,7 +46,7 @@ module('Acceptance | Bands', function (hooks) {
       .exists('The Songs tab is active')
   })
 
-  test('Sort songs in various ways', async function (assert) {
+  test('Sort songs in various ways', async function(assert) {
     let band = this.server.create('band', { name: 'Them Crooked Vultures' })
     this.server.create('song', { title: 'Elephants', rating: 5, band })
     this.server.create('song', { title: 'New Fang', rating: 4, band })
@@ -96,7 +96,7 @@ module('Acceptance | Bands', function (hooks) {
     assert.equal(currentURL(), '/bands/1/songs?s=ratingAsc')
   })
 
-  test('Search songs', async function (assert) {
+  test('Search songs', async function(assert) {
     let band = this.server.create('band', {
       name: 'Them Crooked Vultures'
     })
@@ -148,7 +148,7 @@ module('Acceptance | Bands', function (hooks) {
 
   })
 
-  test('Visit landing page without signing in', async function (assert) {
+  test('Visit landing page without signing in', async function(assert) {
     await visit('/')
     assert.dom('[data-test-rr=form-header]').hasText('Log in to R&R')
     assert.dom('[data-test-rr=user-email]').doesNotExist()
